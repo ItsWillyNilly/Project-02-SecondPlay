@@ -5,20 +5,15 @@ router.get('/', async (req, res) => {
     try {
       // Get all projects and JOIN with user data
       const postData = await Post.findAll({
-        include: [
-          {
-            model: User,
-            attributes: ['name'],
-          },
-        ],
+     
         order:[
           ['created_at', 'DESC']
         ]
       });
-  console.log("postdata : >>\n", postData);
+  
       // Serialize data so the template can read it
       const posts = postData.map((post) => post.get({ plain: true }));
-  
+      console.log("postdata : >>\n", posts);
       // Pass serialized data and session flag into template
       res.render('home-page', { 
         posts, 
@@ -37,3 +32,10 @@ router.get('/login', (req, res) => {
 // router.get()
 
 module.exports = router;
+
+// include: [
+//   {
+//     model: User,
+//     attributes: ['username'],
+//   },
+// ],
