@@ -1,8 +1,6 @@
 // seeds/postdata.js
 
-const { Equipment } = require('../models');
-
-const postdata = [
+[
   {
     type: 'Console',
     price: 100,
@@ -26,8 +24,4 @@ const postdata = [
   },
 ];
 
-const seedPosts = async () => {
-  await Equipment.bulkCreate(postdata);
-};
 
-module.exports = seedPosts;
