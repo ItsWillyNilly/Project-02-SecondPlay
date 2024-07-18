@@ -1,4 +1,4 @@
-const router = express.Router();
+const router = require("express").Router();
 const { Post, User } = require('../models');
 // route to get all products
 router.get('/', async (req, res) => {
@@ -34,6 +34,6 @@ router.get('/login', (req, res) => {
 });
 
 // route to get one product
-router.get()
+// router.get()
 
 module.exports = router;
