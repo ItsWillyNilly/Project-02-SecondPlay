@@ -9,11 +9,15 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
-        title: {
+        type: {
             type: DataTypes.STRING,
             allowNull: false
         },
         price: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        description: {
             type: DataTypes.STRING,
             allowNull: false
         },
