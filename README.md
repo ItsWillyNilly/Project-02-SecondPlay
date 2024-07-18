@@ -1,4 +1,5 @@
 # Project-02-SecondPlay
+This is a web application that allows users to sell their old gaming equipment and peripherals such as old playstations, XBOX consoles, Gameboys, controllers and games.
 
 
 ## Table of Contents
