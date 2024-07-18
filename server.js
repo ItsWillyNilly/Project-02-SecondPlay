@@ -2,65 +2,40 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const routes = require('./controllers');
-// const {passport} = require('./middleware/passport');
-const bcrypt = require('bcrypt');
 const session = require('express-session');
-// requiring our models
-const db = require('./models');
-const sequelize = require ('./config/connection')
-// temporary user obj array for storing new users until I figure out how to save them to the db instead
-const users = [];
-
-// express.js setup
-const port = process.env.PORT || 3001;
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// line 8-11 is how we are going to use the dependencies above 
+const sequelize = require('./config/connection')
 const app = express();
-
-app.use(express.urlencoded({ extended: false }));
-
 const hbs = exphbs.create({});
+const routes = require('./controllers');
 
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize,
+    }),
+};
+app.use(session(sess));
+app.use((req, res, next)=>{
+    req.session.loggedIn = req.session.loggedIn ?? false;
+next();
+}
+);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(routes);
 
-// sessions that keep track of our user's login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-app.get('/', (req, res) => {
-    res.render('home-page.handlebars');
-});
-
-app.get('/login', (req, res) => {
-    res.render('login.handlebars');
-});
-
-app.post('/login',)
-
-app.get('/signup', (req, res) => {
-    res.render('signup.handlebars');
-});
-
-app.post('/signup', async (req, res) => {
-    try {
-        const hash = await bcrypt.hash(req.body.signupPassword, 10);
-        users.push({
-            id: Date.now().toString(),
-            name: req.body.signupUsername,
-            password: hash,
-            email: req.body.signupEmail
-        });
-        res.redirect('/login');
-    } catch (error) {
-        console.log(error);
-        res.redirect('/signup');
-    }
-});
-
+const PORT = process.env.PORT || 3001;
 // syncing our sequelize models and then starting our express app
 sequelize.sync().then(function () {
-    app.listen(port, function () {
-        console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", port, port);
+    app.listen(PORT, function () {
+        console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
     });
 });

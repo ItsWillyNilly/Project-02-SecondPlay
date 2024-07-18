@@ -27,3 +27,10 @@ const seedAll = async () => {
 
 seedAll();
 
+
+//.JSON FILES DONT ALLOW COMMENTS
+//changed userdata.js to userdata.json because the body of userdata.js is delared as an array object
+//so to use this object we have to change userdata.js to userdata.json
+
+//changed postdata.js to post.json because the body of postdata,js is delared as an array object
+//so to use this object we have to change postdata.js to postdata.json
