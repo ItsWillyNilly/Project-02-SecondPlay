@@ -15,14 +15,14 @@ router.get('/', async (req, res) => {
           ['created_at', 'DESC']
         ]
       });
-  
+  console.log("postdata : >>\n", postData);
       // Serialize data so the template can read it
       const posts = postData.map((post) => post.get({ plain: true }));
   
       // Pass serialized data and session flag into template
-      res.render('homepage', { 
+      res.render('home-page', { 
         posts, 
-        logged_in: req.session.logged_in 
+        loggedIn: req.session.loggedIn 
       });
     } catch (err) {
       res.status(500).json(err);
