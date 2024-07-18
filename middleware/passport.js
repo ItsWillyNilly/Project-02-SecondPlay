@@ -2,13 +2,13 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
 function initializePassport(passport, getUserByEmail) {
-    const autheticateUser = (signup-email, signup-password, done) => {
-        const user = getUserByEmail(signup-email);
+    const autheticateUser = async (signupEmail, signupPassword, done) => {
+        const user = getUserByEmail(signupEmail);
         if (user == null) {
             return done(null, false, { message: 'No user with that email' })
         }
         try {
-            if (await bcrypt.compare(signup-password, user.password)) {
+            if (await bcrypt.compare(signupPassword, user.password)) {
                 return done(null, user)
             } else {
                 return done(null, false, { message: 'Password incorrect' })
@@ -23,7 +23,7 @@ function initializePassport(passport, getUserByEmail) {
 
 }
 
-module.exports = router;
+module.exports = {passport:initializePassport};
 
 
 // const auth = (req, res, next)=> {
