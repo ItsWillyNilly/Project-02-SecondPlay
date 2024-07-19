@@ -9,7 +9,7 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
-        title: {
+        type: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -17,13 +17,17 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        personpostedby: {
+        description: {
             type: DataTypes.STRING,
             allowNull: false
         },
         condition: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        image_url: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         user_id: {
             type: DataTypes.INTEGER,
