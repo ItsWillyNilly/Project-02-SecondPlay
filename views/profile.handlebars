@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>List a New Item:</h3>
+<!--New Form to list a new item for sale!-->
+    <form class="form new-item-form">
+      <!--User Inputs!-->
+      <!--Item Title!-->
+      <div class="form-group">
+        <label for="item-title">Item title:</label>
+        <input class="form-input" type="text" id="item-title" name="item-title" />
+      </div>
+      <!--Item Price-->
+      <div class="form-group">
+        <label for="item-price">Item Price($):</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      </div>
+      <!--Posted By-->
+      <!--TODO: This value can be automatically filled , can be same as name of the loged in person!-->
+      <div class="form-group">
+        <label for="item-desc">Posted By:</label>
+        <textarea class="form-input" id="item-desc" name="item-desc"></textarea>
+      </div>
+      <!--Item Description-->
+      <div class="form-group">
+        <label for="item-desc">description:</label>
+        <textarea class="form-input" id="item-desc" name="item-desc"></textarea>
+      </div>
+      <!--Item Condition-->
+      <div class="form-group">
+        <label for="item-cond">Condtition:</label>
+        <textarea class="form-input" id="item-cond" name="item-cond"></textarea>
+      </div>
+      <!--Form Submit button-->
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">List</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if posts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Listed Items:</h3>
+
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{post.id}}">{{post.title}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
