@@ -1,9 +1,13 @@
-    <h2 class="header1">New Post</h2>
+<h2 class="header1">New Post</h2>
 <section>
-    
+
     {{#each posts as | post |}}
-        {{> card-feed}}
+    {{> card-feed}}
     {{/each}}
-    
+
+    <form action="/logout?_method_DELETE" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+
 </section>
-    <h2 class="header1">Old Post</h2>
+<h2 class="header1">Old Post</h2>
