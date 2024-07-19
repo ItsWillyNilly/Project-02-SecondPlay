@@ -5,13 +5,15 @@ const path = require('path');
 const session = require('express-session');
 const flash = require('express-flash');
 const methodOverride = require('method-override');
+const {initializePassport} = require('./middleware/passport');
+const passport = require('passport');
 // requiring our models
 const db = require('./models');
 // temporary user obj array for storing new users until I figure out how to save them to the db instead
 const users = [];
 
 // express.js setup
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // line 8-11 is how we are going to use the dependencies above 
 const sequelize = require('./config/connection')
@@ -51,8 +53,8 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 // }));
 app.use(flash());
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(methodOverride('_method'));
 
 initializePassport(

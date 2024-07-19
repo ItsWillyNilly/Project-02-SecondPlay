@@ -25,7 +25,7 @@ function initializePassport(passport, getUserByEmail, getUserById) {
     });
 }
 
-module.exports = {passport:initializePassport};
+module.exports = {initializePassport};
 
 
 // const auth = (req, res, next)=> {
