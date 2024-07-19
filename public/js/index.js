@@ -46,11 +46,12 @@ const signupHandler = async (event) => {
 const logoutHandler = async (event) => {
   try {
     await $.ajax({
-      url: "/api/user/logout",
+      url: "/api/users/logout",
       method: "POST",
     });
     window.location.replace("/login");
   } catch (error) {
+    console.log(error);
     alert("failed to logout");
   }
 };
