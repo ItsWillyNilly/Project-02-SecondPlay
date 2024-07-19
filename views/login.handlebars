@@ -1,9 +1,13 @@
+
 <form id="login-form">
     <div class="dashboard-container">
         <div class="dashboard-title">
             <span>Login
         </div>
         <div class="dashboard-body">
+            {{#if messages.error}}
+                {{messages.error}}
+            {{/if}}
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" class="input">
