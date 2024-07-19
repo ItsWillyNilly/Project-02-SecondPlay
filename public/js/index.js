@@ -1,44 +1,61 @@
-// js/index.js
+const loginForm = $("#login-form");
+const signupForm = $("#signup-form");
+const logoutBtn = $(".btn-logout");
+const loginHandler = async (event) => {
+  try {
+    event.preventDefault();
+    const username = $("#username").val().trim();
+    const password = $("#password").val();
+    const res = await $.ajax({
+      url: "/api/users/login",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({ username, password }),
+    });
+    $("#username").val("");
+    $("#password").val("");
+    if (res) {
+      window.location.replace("/");
+    }
+  } catch (error) {
+    alert("failed to login");
+  }
+}
+const signupHandler = async (event) => {
+  try {
+    event.preventDefault();
+    const username = $("#signup-username").val().trim();
+    const password = $("#signup-password").val();
+    const res = await $.ajax({
+      url: "/api/users/signup",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({ username, password }),
+    });
+    $("#username").val("");
+    $("#password").val("");
+    if (res) {
+      window.location.replace("/");
+    }
+  } catch (error) {
+    console.log("finderror", error)
+ 
+    alert("failed to signup");
+  }
+}
+const logoutHandler = async (event) => {
+  try {
+    await $.ajax({
+      url: "/api/user/logout",
+      method: "POST",
+    });
+    window.location.replace("/login");
+  } catch (error) {
+    alert("failed to logout");
+  }
+};
 
-const express = require('express');
-const session = require('express-session');
-const passport = require('passport');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const { sequelize } = require('../models');
-const User = require('../models/user');
-const userRoutes = require('../api/user');
-require('dotenv').config();
-require('../config/passport'); // Passport configuration
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Session configuration
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    store: new SequelizeStore({
-      db: sequelize,
-    }),
-  })
-);
-
-// Initialize Passport.js
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Routes
-app.use('/api/users', userRoutes);
-
-// Sync database and start server
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-  });
-});
+loginForm.on("submit", loginHandler);
+signupForm.on("submit", signupHandler);
+logoutBtn.on("click", logoutHandler);
