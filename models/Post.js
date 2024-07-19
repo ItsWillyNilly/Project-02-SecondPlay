@@ -9,7 +9,7 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
-        type: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false
         },

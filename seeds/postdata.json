@@ -1,14 +1,14 @@
 [
   {
-    "type": "Console",
+    "title": "Console",
     "price": 100,
     "description": "Old PlayStation 2 in good condition.",
     "condition": "Good",
-    "image_url": "https://example.com/images/ps2.jpg",
+    "image_url": "https://www.pngall.com/wp-content/uploads/2016/07/PlayStation-PNG-Free-PNG-Image.png",
     "user_id": 1
   },
   {
-    "type": "Controller",
+    "title": "Controller",
     "price": 20,
     "description": "Xbox One controller, slightly used.",
     "condition": "Slightly Used",
@@ -16,7 +16,7 @@
     "user_id": 2
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -25,7 +25,7 @@
     
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -34,7 +34,7 @@
     
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -43,7 +43,7 @@
     
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -52,7 +52,7 @@
     
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -61,7 +61,7 @@
     
   },
   {
-    "type": "Console",
+    "title": "Console",
     "price": 100,
     "description": "Old PlayStation 2 in good condition.",
     "condition": "Good",
@@ -69,7 +69,7 @@
     "user_id": 1
   },
   {
-    "type": "Controller",
+    "title": "Controller",
     "price": 20,
     "description": "Xbox One controller, slightly used.",
     "condition": "Slightly Used",
@@ -77,7 +77,7 @@
     "user_id": 2
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -86,7 +86,7 @@
     
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -95,7 +95,7 @@
     
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -104,7 +104,7 @@
     
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
@@ -113,7 +113,7 @@
     
   },
   {
-    "type": "Game",
+    "title": "Game",
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
