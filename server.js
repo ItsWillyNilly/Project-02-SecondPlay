@@ -42,7 +42,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(routes);
+
 
 // sessions that keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
@@ -62,59 +62,59 @@ initializePassport(
     email => users.find(user => user.email === email),
     id => users.find(user => user.id === id)
 );
+app.use(routes);
+// app.get('/', checkIsAuthenticated, (req, res) => {
+//     res.render('home-page.handlebars');
+// });
 
-app.get('/', checkIsAuthenticated, (req, res) => {
-    res.render('home-page.handlebars');
-});
+// app.get('/login', checkNotAuthenticated, (req, res) => {
+//     res.render('login.handlebars');
+// });
 
-app.get('/login', checkNotAuthenticated, (req, res) => {
-    res.render('login.handlebars');
-});
+// app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+//     successRedirect: '/',
+//     failureRedirect: '/login',
+//     failureFlash: true
+// }))
 
-app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login',
-    failureFlash: true
-}))
+// app.get('/signup', checkNotAuthenticated, (req, res) => {
+//     res.render('signup.handlebars');
+// });
 
-app.get('/signup', checkNotAuthenticated, (req, res) => {
-    res.render('signup.handlebars');
-});
+// app.post('/signup', checkNotAuthenticated , async (req, res) => {
+//     try {
+//         const hash = await bcrypt.hash(req.body.signupPassword, 10);
+//         users.push({
+//             id: Date.now().toString(),
+//             name: req.body.signupUsername,
+//             password: hash,
+//             email: req.body.signupEmail
+//         });
+//         res.redirect('/login');
+//     } catch (error) {
+//         console.log(error);
+//         res.redirect('/signup');
+//     }
+// });
 
-app.post('/signup', checkNotAuthenticated , async (req, res) => {
-    try {
-        const hash = await bcrypt.hash(req.body.signupPassword, 10);
-        users.push({
-            id: Date.now().toString(),
-            name: req.body.signupUsername,
-            password: hash,
-            email: req.body.signupEmail
-        });
-        res.redirect('/login');
-    } catch (error) {
-        console.log(error);
-        res.redirect('/signup');
-    }
-});
+// app.delete('/logout', (req, res) => {
+//     req.logOut();
+//     res.redirect('/login');
+// });
 
-app.delete('/logout', (req, res) => {
-    req.logOut();
-    res.redirect('/login');
-});
+// function checkIsAuthenticated(req, res, next) {
+//     if (req.isAuthenticated()) {
+//         return next();
+//     }
+//     res.redirect('/login');
+// }
 
-function checkIsAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/login');
-}
-
-function checkNotAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return res.redirect('/');
-    }
-    next();
-}
+// function checkNotAuthenticated(req, res, next) {
+//     if (req.isAuthenticated()) {
+//         return res.redirect('/');
+//     }
+//     next();
+// }
 
 // syncing our sequelize models and then starting our express app
 sequelize.sync().then(function () {
