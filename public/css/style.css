@@ -45,11 +45,18 @@ nav .list-item:last-child {
 
 section {
     margin: 0 15px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 section .container {
+    width: 200px;
+    height: 300px;
     margin-bottom: 20px;
     border: 1px solid black;
+    
 }
 
 section .container .header {

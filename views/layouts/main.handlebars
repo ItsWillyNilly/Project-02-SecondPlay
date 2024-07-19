@@ -7,9 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecondPlay</title>
     <link rel="stylesheet" href="/css/style.css">
+  
 </head>
 
 <body>
+  <nav>
+
+            <ul class="list">
+                <li class="list-item"> <a href="/">Home</a></li>
+                {{#unless login}}
+                <li class="list-item"> <a href="/login">Login</a></li>
+                {{else}}
+                <li class="list-item"> 
+                    <button class="btn-logout">Logout</button>
+                </li>
+                {{/unless}} 
+            </ul>
+        </nav>
   <main>
 {{{body}}}
     </main>
