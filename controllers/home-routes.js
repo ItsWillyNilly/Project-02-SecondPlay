@@ -31,7 +31,18 @@ router.get("/signup", (req, res) => {
   console.log("signup")
   res.render("signup");
 });
+router.get("/card/:id", async (req, res)=>{
+  const cardData = await Post.findByPk(req.params.id);
+  const card = cardData.get({
+    plain: true
+  });
+  res.render("card-info", {
+    card,
+    loggedIn: req.session.loggedIn
+  })
 
+
+})
 // route to get one product
 // router.get()
 

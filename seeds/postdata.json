@@ -5,6 +5,7 @@
     "description": "Old PlayStation 2 in good condition.",
     "condition": "Good",
     "image_url": "https://www.pngall.com/wp-content/uploads/2016/07/PlayStation-PNG-Free-PNG-Image.png",
+    "image_url": "/image/PlayStation.png",
     "user_id": 1
   },
   {
@@ -65,7 +66,7 @@
     "price": 100,
     "description": "Old PlayStation 2 in good condition.",
     "condition": "Good",
-    "image_url": "https://example.com/images/ps2.jpg",
+    "image_url": "/image/PlayStation.png",
     "user_id": 1
   },
   {
