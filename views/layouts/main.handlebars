@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,48 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecondPlay</title>
     <link rel="stylesheet" href="/css/style.css">
-  
+
 </head>
 
 <body>
-  <nav>
-
-            <ul class="list">
-                <li class="list-item"> <a href="/">Home</a></li>
-                {{#unless login}}
+    <nav>
+        <ul class="list">
+            <li class="list-item"> <a href="/">Home</a></li>
+            {{#if loggedIn}}
+            <li class="list-item">
+                <button class="btn-logout">Logout</button>
+            </li>
+            {{else}}
                 <li class="list-item"> <a href="/login">Login</a></li>
-                {{else}}
-                <li class="list-item"> 
-                    <button class="btn-logout">Logout</button>
-                </li>
-                {{/unless}} 
-            </ul>
-        </nav>
-  <main>
-{{{body}}}
+            {{/if}}
+        </ul>
+    </nav>
+    <main>
+        {{{body}}}
     </main>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="/js/index.js"></script>
 
-    
+
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
