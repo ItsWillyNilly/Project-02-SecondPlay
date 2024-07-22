@@ -1,18 +1,15 @@
-<a href="/card/{{id}}">
-    {{!-- we have to modify the container to in css file --}}
-    <div class="container">
-        <div class="header">
-            <h2>{{type}}</h2>
-            {{!-- <span>{{price}}</span> --}}
-            {{!-- <span>person posted by{{}}</span> --}}
-            {{!-- <span>{{condition}}</span> --}}
-        </div>
-        <div class="body">
-            <div class="img-container">
-                <img src="{{image_url}}" alt="">
-            </div>
 
-            {{!-- <p>{{description}}</p> --}}
+    <a href="/card/{{id}}">
+{{!-- we have to modify the container to in css file --}}
+        <div class="container">
+            <div class="header">
+                <h2>{{title}}</h2>
+            </div>
+            <div class="body">
+                <img src={{image_url}} alt="" width="80px" height="80px"/>
+                <p>{{price}}</p>
+                <p>{{condition}}</p>
+                <p>{{description}}</p>
+            </div>
         </div>
-    </div>
-</a>
+    </a>
