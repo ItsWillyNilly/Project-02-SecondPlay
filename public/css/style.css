@@ -135,6 +135,7 @@ section .container .body {
 
 .dashboard-body {
     padding: 15px;
+    width: 300px;
 }
 
 a {
