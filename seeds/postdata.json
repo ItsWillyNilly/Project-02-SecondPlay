@@ -12,7 +12,7 @@
     "price": 20,
     "description": "Xbox One controller, slightly used.",
     "condition": "Slightly Used",
-    "image_url": "https://example.com/images/xbox-controller.jpg",
+    "image_url": "/image/xboxController.png",
     "user_id": 2
   },
   {
@@ -20,16 +20,7 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
-    "user_id": 2
-    
-  },
-  {
-    "title": "Game",
-    "price": 15,
-    "description": "Gameboy Advance game - Pokémon Emerald.",
-    "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
   },
@@ -38,7 +29,7 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
   },
@@ -47,7 +38,7 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
   },
@@ -56,7 +47,16 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
+    "user_id": 2
+    
+  },
+  {
+    "title": "Game",
+    "price": 15,
+    "description": "Gameboy Advance game - Pokémon Emerald.",
+    "condition": "Like New",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
   },
@@ -73,7 +73,7 @@
     "price": 20,
     "description": "Xbox One controller, slightly used.",
     "condition": "Slightly Used",
-    "image_url": "https://example.com/images/xbox-controller.jpg",
+    "image_url": "/image/xboxController.png",
     "user_id": 2
   },
   {
@@ -81,7 +81,7 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
   },
@@ -90,7 +90,7 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
   },
@@ -99,7 +99,7 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
   },
@@ -108,7 +108,7 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
   },
@@ -117,9 +117,15 @@
     "price": 15,
     "description": "Gameboy Advance game - Pokémon Emerald.",
     "condition": "Like New",
-    "image_url": "https://example.com/images/pokemon-emerald.jpg",
+    "image_url": "/image/PokemonEmerald.webp",
     "user_id": 2
     
-  }
+  },
+  {"title": "Controller",
+    "price": 30,
+    "description": "Xbox One controller, slightly used.",
+    "condition": "Slightly Used",
+    "image_url": "/image/xboxController.png",
+    "user_id": 2}
 
 ]
