@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const { Post, User } = require('../models');
+const isAuth = require("../utils/isAuth");
+
 // route to get all products
 router.get('/', async (req, res) => {
   try {
@@ -31,6 +33,7 @@ router.get("/signup", (req, res) => {
   console.log("signup")
   res.render("signup");
 });
+
 router.get("/card/:id", async (req, res)=>{
   const cardData = await Post.findByPk(req.params.id);
   const card = cardData.get({
@@ -40,8 +43,12 @@ router.get("/card/:id", async (req, res)=>{
     card,
     loggedIn: req.session.loggedIn
   })
+});
 
-
+router.get('/new-post', isAuth, function(req, res) {
+  res.render('new-post', {
+    loggedIn: req.session.loggedIn
+  });
 })
 // route to get one product
 // router.get()

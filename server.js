@@ -30,18 +30,22 @@ const sess = {
         db: sequelize,
     }),
 };
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(session(sess));
 app.use((req, res, next) => {
     req.session.loggedIn = req.session.loggedIn ?? false;
     next();
 }
 );
+
 console.log("server.js line 28");
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 
 // sessions that keep track of our user's login status
